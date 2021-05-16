@@ -1,0 +1,28 @@
+<div id="singlepost">
+    <div id="singleposttitle">
+        
+        <p id="postTitle">{{title}}</p>
+      
+        <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
+    </div>
+    <section>
+        <p>{{text}}</p>
+    </section>
+
+    <div style="display: none;" id="postId" data-value="{{id}}"></div>
+  
+    {{#each comments as |comment|}}
+    {{> comment}}
+    {{/each}}
+
+    {{#if loggedIn}}
+    <div id="comment">
+        <h3>Comment</h3>
+        <input type="text" id="commentInput"></input>
+        <button type="submit" id="submitBtn">Submit</button>
+    </div>
+    {{else}}
+    <p>Please log in to comment</p>
+    {{/if}}
+</div>
+<script src="/js/comment.js"></script>

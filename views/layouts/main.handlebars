@@ -9,19 +9,37 @@
     <title>Tech Blog</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/dashboard">Dashboard</a>
-            
-            <button id="logout" class="btn-no-style">Logout</button>
-            
-            <a href="/login">Login</a>
-            
-        </nav>
+  
+     <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+       <span class="badge bg-success"><h3>The Tech Blog</h3></span> 
 
-    </header>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+         
+        </ul>
+
+
+        <div class="text-end">
+            {{#if loggedIn}}
+            <a href="/dashboard" class="btn btn-outline-light me-2">DashBoard</a>
+          <a href="#" id="logout" class="btn btn-success">Logout</a>
+          
+            {{else}}
+          <a href="/login" class="btn btn-outline-light me-2">Login</a>
+          <a href="/register" class="btn btn-success">Sign-up</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
 {{{body}}}
+  </div>
 
+
+{{#if loggedIn}}
 <script src="/js/logout.js"></script>
+{{/if}}
 </body>
