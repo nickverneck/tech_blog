@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
           const posts = postData.map((Post) => Post.get({ plain: true }));
           console.log(posts);
         res.render('home', {
-            posts
+            posts,loggedIn: req.session.loggedIn
         });
     } catch (err) {
         console.log(err);
@@ -27,13 +27,16 @@ router.get('/post/:id', async (req, res) => {
         {
           model: Comment,
         },
+        {
+          model: User,
+        },
       ],
     });
     
     console.log(dbPostData);
     const singlePost = dbPostData.get({ plain: true });
     console.log({ singlePost, loggedIn: req.session.loggedIn})
-    res.render('post', { ...singlePost, loggedIn: req.session.loggedIn})
+    res.render('blog-post', { ...singlePost, loggedIn: req.session.loggedIn})
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -74,7 +77,9 @@ router.post('/add-comment', async (req, res) => {
 });
 // renders create-post.handlebars
 router.get('/create-post', async (req, res) => {
+  console.log(req.session.user);
   res.render('create-post', {loggedIn: req.session.loggedIn, user_id: req.session.user})
+  
 })
 // renders create-post.handlebars
 router.get('/register', async (req, res) => {

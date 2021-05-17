@@ -1,21 +1,18 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login">
-      <div class="form-group">
-        <label for="user-login">Username:</label>
-        <input class="form-input" type="text" id="user-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
- 
-</div>
 
+<main class="col-5">
+  <form class="form login">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="user-login" placeholder="username">
+      <label for="floatingInput">username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="password-login" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-warning" type="submit">Sign in</button>
+    
+  </form>
+</main>
 <script src="/js/login.js"></script>

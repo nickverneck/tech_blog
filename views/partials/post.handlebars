@@ -1,10 +1,13 @@
-<div id="post">
-    <div id="postheader">
-        <a id="postTitle" href="/blogpost/{{id}}">{{title}}</a>
-        <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
-    </div>
-    <br><br>
-    <section>
-        <p id="postContent">{{text}}</p>
-    </section>
+
+
+<div class="card col-7 m-5">
+  <div class="card-header">
+   <h2><a  href="/post/{{id}}">{{title}}</a></h2>
+  </div>
+  <div class="card-body">
+   <p>{{text}}</p>
+  </div>
+  <div class="card-footer text-muted">
+   <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
+  </div>
 </div>

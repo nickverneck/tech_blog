@@ -1,3 +1,7 @@
 body {
     background-color: darkseagreen;
 }
+h2 a {
+    text-decoration:none;
+    color: darkseagreen;
+}

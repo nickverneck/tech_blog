@@ -2,12 +2,12 @@ const comment = async (e) => {
 
     e.preventDefault();
     const userComment = document.getElementById('comment-Input').value;
-    const response = await fetch('/newcomment', {
+    const response = await fetch('/add-comment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             comment: userComment || '',
-            blog_id: document.getElementById("post-Id").dataset.value
+            post_id: document.getElementById("post-Id").dataset.value
         })
     });
     if (response.ok) {
